@@ -1,8 +1,27 @@
-html, body {
-    margin: 0;
-    padding: 0;
-  }
-  canvas {
-    display: block;
-  }
-  
+let palavra;
+
+function setup() {
+  createCanvas(400, 400);
+
+  palavra = palavraAleatoria();
+}
+
+function palavraAleatoria() {
+  let palavras = ["Gaby", "dniz", "gabs "];
+
+  return random(palavras);
+}
+
+function inicializaCores() {
+  background("white");
+  fill("black");
+  textSize(64);
+  textAlign(CENTER, CENTER);
+}
+
+function draw() {
+  inicializaCores();
+
+  let maximo = width;
+  let minimo = 0;
+  // mouseX, 0, width ==> 0, palavra.length
